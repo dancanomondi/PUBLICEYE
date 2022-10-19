@@ -1,0 +1,15 @@
+.user-crime__box{
+    /* box-shadow: 0 3.2.rem 6.4rem rgba(179, 167, 167, 0.075); */
+    box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.075);
+
+
+}
+
+
+.user-crime__box:hover{ 
+    transform: translateY(-1.2rem);
+    box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.06);
+
+
+}
+
