@@ -26,10 +26,10 @@ import {
     
     return (
         
-      <Box overflowY="scroll" h="100%" backgroundImage={brayo}>
+      <Box overflowY="scroll" backgroundImage={brayo}>
         <MainNavigation/>
           <Box >
-            <Text fontSize="1.5em" textAlign="left" fontWeight="bold" bgColor='blue.100'>
+            <Text fontSize="1.5em" textAlign="left" fontWeight="bold">
               Report crime
             
             </Text>
@@ -102,7 +102,7 @@ import {
             </Box>
             </FormControl>
             <Box align="left">
-                              <Button colorScheme="blue" variant="outline" onClick={ClearFields}>
+                              <Button marginRight={70} colorScheme="blue" variant="outline" onClick={ClearFields}>
                   Cancel
                 </Button>
                 <Button colorScheme="blue">Submit</Button>
