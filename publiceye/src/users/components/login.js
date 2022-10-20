@@ -18,7 +18,6 @@ import {
     Text,
     useColorModeValue,
   } from '@chakra-ui/react';
-import MainNavigation from '../../shared/pages/MainNavigation/MainNavigation';
   
 const Login = () => {
     return (
