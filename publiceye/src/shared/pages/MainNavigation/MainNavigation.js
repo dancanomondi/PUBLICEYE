@@ -26,10 +26,14 @@ import {
     ChevronDownIcon,
     ChevronRightIcon,
   } from '@chakra-ui/icons';
+  import { useColorMode } from "@chakra-ui/color-mode"
+  import {  MdLightMode, MdDarkMode } from "react-icons/md";
 import Login from '../../../users/components/login';
   
   const MainNavigation = () => {
     const { isOpen, onToggle } = useDisclosure();
+    const { colorMode, toggleColorMode } = useColorMode();
+    const isDark = colorMode === "dark";
   
     return (
       <div className='main-nav-div'
@@ -63,7 +67,7 @@ import Login from '../../../users/components/login';
               textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
               fontFamily={"Rubik"}
               fontSize = {'24'}
-              color={useColorModeValue('gray.1000', 'white')}>
+              color={isDark ? "gray.500":"gray.1000"}>
               PublicEye
             </Text>
   
@@ -79,6 +83,7 @@ import Login from '../../../users/components/login';
             spacing={6}>
             <Redirect to="/login">
               <Button
+              color ={isDark ?"gray.500":"gray.1000"}
                 as={'a'}
                 fontSize={'16px'}
                 fontWeight={600}
@@ -102,6 +107,7 @@ import Login from '../../../users/components/login';
               }}>
               Report a Crime
             </Button>
+            <IconButton color={ isDark ? "gray.500":"gray.1000"} ml={4} icon={isDark? <MdLightMode/> : <MdDarkMode/>} isRound="true" onClick={toggleColorMode}></IconButton>
           </Stack>
         </Flex>
   
@@ -118,6 +124,7 @@ import Login from '../../../users/components/login';
     const linkColor = useColorModeValue('gray.600', 'gray.200');
     const linkHoverColor = useColorModeValue('gray.800', 'white');
     const popoverContentBgColor = useColorModeValue('white', 'gray.800');
+    
   
     return (
       <Stack direction={'row'} spacing={4}>
@@ -264,12 +271,14 @@ import Login from '../../../users/components/login';
     subLabel?: string;
     children?: Array<NavItem>;
     href?: string;
+
   }
   
-  const NAV_ITEMS: Array<NavItem> = [
+  const NAV_ITEMS: Array<NavItem> = [ 
     {
       label: 'Home',
       href: '#',
+
     },
     {
       label: 'How it Works',
