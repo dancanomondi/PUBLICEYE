@@ -4,7 +4,7 @@ import { Box, SimpleGrid, Icon, Text, Stack, Flex } from '@chakra-ui/react';
 import { FaRegHeart } from 'react-icons/fa';
 import { GiPoliceOfficerHead } from "react-icons/gi";
 import {MdOutlineSafetyDivider} from "react-icons/md"
-
+import { useColorMode } from '@chakra-ui/color-mode'
 import './why.css'
 
 interface WhyProps {
@@ -14,6 +14,8 @@ interface WhyProps {
 }
 
 const Reason = ({ title, text, icon }: WhyProps) => {
+  const { colorMode } = useColorMode();
+  const isDark = colorMode === "dark";
   return (
     <Stack>
       <Flex
@@ -26,8 +28,8 @@ const Reason = ({ title, text, icon }: WhyProps) => {
         mb={1}>
         {icon}
       </Flex>
-      <Text fontWeight={600}>{title}</Text>
-      <Text color={'gray.600'}>{text}</Text>
+      <Text color={isDark?'gray.600':'gray.600'} fontWeight={600}>{title}</Text>
+      <Text color={isDark?'gray.600':'grey.600'}>{text}</Text>
     </Stack>
   );
 };
@@ -65,7 +67,7 @@ const Why = () => {
         <Reason
           icon={<Icon as={FaRegHeart} w={10} h={10} />}
           title={'Save Lives'}
-          text={
+          text ={
             'Provide information that can prompt of police officers to potential crimes. Help police from stopping potential criminals'
           }
         />
