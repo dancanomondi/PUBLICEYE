@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link as Redirect} from 'react-router-dom'
-
+import ultimatelogo from '../../hero section/images/ultimatelogo.PNG'
 import './MainNavigation.css'
 
 import {
@@ -17,8 +17,8 @@ import {
     PopoverTrigger,
     PopoverContent,
     useColorModeValue,
-    useBreakpointValue,
     useDisclosure,
+    Image
   } from '@chakra-ui/react';
   import {
     HamburgerIcon,
@@ -26,10 +26,15 @@ import {
     ChevronDownIcon,
     ChevronRightIcon,
   } from '@chakra-ui/icons';
+
+
+  console.log(ultimatelogo);
+
   import { useColorMode } from "@chakra-ui/color-mode"
   import {  MdLightMode, MdDarkMode } from "react-icons/md";
 import Login from '../../../users/components/login';
   
+
   const MainNavigation = () => {
     const { isOpen, onToggle } = useDisclosure();
     const { colorMode, toggleColorMode } = useColorMode();
@@ -63,12 +68,11 @@ import Login from '../../../users/components/login';
             />
           </Flex>
           <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-            <Text
-              textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
-              fontFamily={"Rubik"}
-              fontSize = {'24'}
-              color={isDark ? "gray.500":"gray.1000"}>
-              PublicEye
+
+            <Text>
+              <Image 
+              boxSize='280px*150px'
+              src={ultimatelogo}/>
             </Text>
   
             <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
@@ -94,6 +98,7 @@ import Login from '../../../users/components/login';
               Sign In
               </Button>
             </Redirect>
+            <Redirect to = '/report'>
             <Button
               display={{ base: 'none', md: 'inline-flex' }}
               fontSize={'16px'}
@@ -107,7 +112,11 @@ import Login from '../../../users/components/login';
               }}>
               Report a Crime
             </Button>
+
+            </Redirect>
+
             <IconButton color={ isDark ? "gray.500":"gray.1000"} ml={4} icon={isDark? <MdLightMode/> : <MdDarkMode/>} isRound="true" onClick={toggleColorMode}></IconButton>
+
           </Stack>
         </Flex>
   
@@ -277,12 +286,11 @@ import Login from '../../../users/components/login';
   const NAV_ITEMS: Array<NavItem> = [ 
     {
       label: 'Home',
-      href: '#',
-
+      href: 'http://localhost:3000',
     },
     {
       label: 'How it Works',
-      href: '#',
+      href: 'http://localhost:3000/howitworks',
     },
   ];
 
