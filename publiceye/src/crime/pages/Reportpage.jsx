@@ -16,8 +16,11 @@ import {
   
     document.getElementById("input1").value = "";
     document.getElementById("input2").value="";
+    document.getElementById('input3').value='';
     document.getElementById("input4").value = "";
     document.getElementById("input5").value = "";
+    document.getElementById("input6").value='';
+    document.getElementById('input 7').value='';
   
   }
   console.log(brayo);
@@ -26,9 +29,9 @@ import {
     
     return (
         
-      <Box overflowY="scroll" backgroundImage={brayo}>
+      <Box overflowY="scroll" height={1180}  backgroundImage={brayo}>
         <MainNavigation/>
-          <Box >
+          <Box pb='30px' >
             <Text fontSize="1.5em" textAlign="left" fontWeight="bold">
               Report crime
             
@@ -45,8 +48,8 @@ import {
             
             
             
-                  <FormControl>
-                    <FormLabel>Name </FormLabel>
+                  <FormControl pb='30px'>
+                    <FormLabel> Your Name </FormLabel>
                     <Input
                       width="400px"
                       bg="white"
@@ -54,34 +57,63 @@ import {
                       id="input1"
                     />
                   </FormControl>
-  
-                  <FormControl isRequired>
-                    <FormLabel>Location of crime</FormLabel>
-                    <Input
-                      width="400px"
-                      bg="white"
-                      placeholder="Enter location"
-                      id= "input2"
-                    />
-                  </FormControl>
-  
-                  <FormControl isRequired>
-                    <FormLabel>Phone Number/ Email</FormLabel>
-                    <Input
-                      width="400px"
-                      bg="white"
-                      placeholder="Enter contact"
-                      id="input4"
-                    />
-                  </FormControl>
-            
-            
-                        <FormControl isRequired>
-                    <FormLabel>Crime</FormLabel>
-                 
                   
+                  <FormControl isRequired pb='30px'>
+                    <FormLabel>Contact</FormLabel>
+                    <Input
+                      width="400px"
+                      bg="white"
+                      placeholder="Enter your Phone Number/Email"
+                      id="input2"
+                    />
+                  </FormControl>
             
-            <Box align="left" pb="90px">
+                  <FormControl isRequired pb='30px'>
+                    <FormLabel>Date of crime [DD/MM/YYYY]</FormLabel>
+                    <Input
+                      width="400px"
+                      bg="white"
+                      placeholder="DD/MM/YYYY "
+                      id= "input3"
+                    />
+                  </FormControl>
+                 <FormControl isRequired pb='30px'>
+                  <FormLabel>Location of crime</FormLabel>
+            
+            <Select  width="400px" id='input4' placeholder ='Please select crime location'>
+            
+              <option value="Gatundu North"> Gatundu North </option>
+              <option value="Suicide">Gatundu South</option>
+              <option value="Githunguri">Githunguri</option>
+              <option value="Juja">Juja</option>
+              <option value="Kabete">Kabete</option>
+              <option value="Kiambaa">Kiambaa</option>
+              <option value="Kiambu">Kiambu</option>
+              <option value="Kikuyu">Kikuyu</option>
+              <option value='Lari'>Lari</option>
+              <option value='Limuru'>Limuru</option>
+              <option value='Ruiru'>Ruiru</option>
+              <option value='Lari'>Lari</option>
+              <option value='Thika East'>Thika East</option>
+              <option value='Thika West'>Thika West</option>
+            </Select>
+          </FormControl>
+
+          <FormControl isRequired pb='30px'>
+                    <FormLabel>Specific Location Description</FormLabel>
+                    <Input
+                      width="400px"
+                      bg="white"
+                      placeholder="Enter location specifics"
+                      id="input7"
+                    />
+                  </FormControl>
+  
+                
+            
+                        <FormControl isRequired align='left' pb='30px'>
+                    <FormLabel>Crime</FormLabel>
+            
               <Select  width="400px" id='input5' placeholder ='Please select crime'>
               
                 <option value="terrorism"> Terrorism </option>
@@ -92,8 +124,17 @@ import {
                 <option value="robbery with violence">Robbery with violence</option>
                 <option value="homicide">Homicide</option>
                 <option value="arson">Arson</option>
+                <option value='sexual harassment'>Sexual Harrasment</option>
               </Select>
-            </Box>
+            </FormControl>
+            <FormControl isRequired align='left' pb='30px'>
+                    <FormLabel>Select gender of the offender</FormLabel>
+            
+              <Select  width="400px" id='input6' placeholder ='Sex'>
+              
+                <option value="male"> Male </option>
+                <option value="female">Female</option>
+              </Select>
             </FormControl>
             <FormControl isRequired>
                     <FormLabel>Select file to upload</FormLabel>
