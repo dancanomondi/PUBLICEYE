@@ -27,13 +27,11 @@ import {
     ChevronRightIcon,
   } from '@chakra-ui/icons';
 
-
-  console.log(ultimatelogo);
-
   import { useColorMode } from "@chakra-ui/color-mode"
   import {  MdLightMode, MdDarkMode } from "react-icons/md";
-import Login from '../../../users/components/login';
   
+  console.log(ultimatelogo);
+
 
   const MainNavigation = () => {
     const { isOpen, onToggle } = useDisclosure();
