@@ -1,0 +1,36 @@
+.user-crimes{
+    display: grid;
+    margin: auto;
+    max-width: 1300px;
+    
+    
+}
+
+
+
+
+.grid--4--cols {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (max-width: 75em) {
+    .grid--4--cols {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+  }
+
+  @media (max-width: 59em){
+    .grid--4--cols {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+  }
+
+  @media (max-width: 30em){
+    .grid--4--cols {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+
+  }

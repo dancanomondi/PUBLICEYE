@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-size: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth; 
+  }
+
+  body {
+    font-family: "Rubik", sans-serif;
+    line-height: 0.5;
+    font-weight: 400;
+    color: #555;
+    overflow-x: hidden;
+  }
